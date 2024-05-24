@@ -7,6 +7,8 @@ environment:
   sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
+  app_ui:
+    path: packages/app_ui
   autoequal: ^0.9.1
   bloc: ^8.1.4
   copy_with_extension: ^5.0.4
@@ -15,12 +17,13 @@ dependencies:
   flame_behaviors: ^1.1.0
   flame_bloc: ^1.11.1
   flame_tiled: ^1.20.1
+  flex_color_scheme: ^7.3.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
-  flutter_soloud: ^2.0.2
   go_router: ^14.1.3
   go_router_paths: ^0.2.2
+  logging: ^1.2.0
 
 dev_dependencies:
   autoequal_gen: ^0.9.1
@@ -31,6 +34,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^5.1.0
+
+scripts: derry.yaml
 
 flutter:
   uses-material-design: true

@@ -1,0 +1,18 @@
+build: dart run build_runner build --delete-conflicting-outputs
+watch: dart run build_runner watch --delete-conflicting-outputs
+
+clean: flutter clean && flutter pub get
+
+doc: flutter doctor -v
+
+full clean: flutter clean && flutter pub get && cd ios && pod deintegrate && pod install && cd ../
+
+init: flutterfire configure
+
+pod clean: cd ios; pod deintegrate; rm -rf Podfile.lock; cd ..; flutter pub get; cd ios; pod install --repo-update
+
+fpg: flutter pub get
+
+spider init: spider create --add-in-pubspec
+
+sbuild: spider build

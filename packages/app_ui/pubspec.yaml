@@ -1,0 +1,26 @@
+name: app_ui
+description: UI Toolkit for the LastArcherStanding Flutter Application
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^2.0.4
+
+flutter:
+  fonts:
+    - family: PublicPixel
+      fonts:
+        - asset: assets/fonts/PublicPixel-z84yD.ttf
+    - family: Pixelify
+      fonts:
+        - asset: assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf
