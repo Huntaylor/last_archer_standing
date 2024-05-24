@@ -42,61 +42,61 @@ class LastArcherStandingTheme {
 
   static TextTheme get _textTheme {
     return TextTheme(
-      displayLarge: LastArcherStandingTextStyle.headline1,
-      displayMedium: LastArcherStandingTextStyle.headline2,
-      displaySmall: LastArcherStandingTextStyle.headline3,
-      headlineMedium: LastArcherStandingTextStyle.headline4,
-      headlineSmall: LastArcherStandingTextStyle.headline5,
-      titleLarge: LastArcherStandingTextStyle.headline6,
-      titleMedium: LastArcherStandingTextStyle.subtitle1,
-      titleSmall: LastArcherStandingTextStyle.subtitle2,
-      bodyLarge: LastArcherStandingTextStyle.bodyText1,
-      bodyMedium: LastArcherStandingTextStyle.bodyText2,
-      bodySmall: LastArcherStandingTextStyle.caption,
-      labelSmall: LastArcherStandingTextStyle.overline,
-      labelLarge: LastArcherStandingTextStyle.button,
+      displayLarge: LastArcherStandingTextStyle.displayLarge,
+      displayMedium: LastArcherStandingTextStyle.displayMedium,
+      displaySmall: LastArcherStandingTextStyle.displaySmall,
+      headlineMedium: LastArcherStandingTextStyle.headlineMedium,
+      headlineSmall: LastArcherStandingTextStyle.headlineSmall,
+      titleLarge: LastArcherStandingTextStyle.titleLarge,
+      titleMedium: LastArcherStandingTextStyle.titleMedium,
+      titleSmall: LastArcherStandingTextStyle.titleSmall,
+      bodyLarge: LastArcherStandingTextStyle.bodyLarge,
+      bodyMedium: LastArcherStandingTextStyle.bodyMedium,
+      bodySmall: LastArcherStandingTextStyle.bodySmall,
+      labelSmall: LastArcherStandingTextStyle.labelSmall,
+      labelLarge: LastArcherStandingTextStyle.labelLarge,
     );
   }
 
   static TextTheme get _smallTextTheme {
     return TextTheme(
-      displayLarge: LastArcherStandingTextStyle.headline1.copyWith(
+      displayLarge: LastArcherStandingTextStyle.displayLarge.copyWith(
         fontSize: _textTheme.displayLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      displayMedium: LastArcherStandingTextStyle.headline2.copyWith(
+      displayMedium: LastArcherStandingTextStyle.displayMedium.copyWith(
         fontSize: _textTheme.displayMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      displaySmall: LastArcherStandingTextStyle.headline3.copyWith(
+      displaySmall: LastArcherStandingTextStyle.displaySmall.copyWith(
         fontSize: _textTheme.displaySmall!.fontSize! * _smallTextScaleFactor,
       ),
-      headlineMedium: LastArcherStandingTextStyle.headline4.copyWith(
+      headlineMedium: LastArcherStandingTextStyle.headlineMedium.copyWith(
         fontSize: _textTheme.headlineMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      headlineSmall: LastArcherStandingTextStyle.headline5.copyWith(
+      headlineSmall: LastArcherStandingTextStyle.headlineSmall.copyWith(
         fontSize: _textTheme.headlineSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      titleLarge: LastArcherStandingTextStyle.headline6.copyWith(
+      titleLarge: LastArcherStandingTextStyle.titleLarge.copyWith(
         fontSize: _textTheme.titleLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      titleMedium: LastArcherStandingTextStyle.subtitle1.copyWith(
+      titleMedium: LastArcherStandingTextStyle.titleMedium.copyWith(
         fontSize: _textTheme.titleMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      titleSmall: LastArcherStandingTextStyle.subtitle2.copyWith(
+      titleSmall: LastArcherStandingTextStyle.titleSmall.copyWith(
         fontSize: _textTheme.titleSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      bodyLarge: LastArcherStandingTextStyle.bodyText1.copyWith(
+      bodyLarge: LastArcherStandingTextStyle.bodyLarge.copyWith(
         fontSize: _textTheme.bodyLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      bodyMedium: LastArcherStandingTextStyle.bodyText2.copyWith(
+      bodyMedium: LastArcherStandingTextStyle.bodyMedium.copyWith(
         fontSize: _textTheme.bodyMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      bodySmall: LastArcherStandingTextStyle.caption.copyWith(
+      bodySmall: LastArcherStandingTextStyle.bodySmall.copyWith(
         fontSize: _textTheme.bodySmall!.fontSize! * _smallTextScaleFactor,
       ),
-      labelSmall: LastArcherStandingTextStyle.overline.copyWith(
+      labelSmall: LastArcherStandingTextStyle.labelSmall.copyWith(
         fontSize: _textTheme.labelSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      labelLarge: LastArcherStandingTextStyle.button.copyWith(
+      labelLarge: LastArcherStandingTextStyle.labelLarge.copyWith(
         fontSize: _textTheme.labelLarge!.fontSize! * _smallTextScaleFactor,
       ),
     );
@@ -104,43 +104,43 @@ class LastArcherStandingTheme {
 
   static TextTheme get _largeTextTheme {
     return TextTheme(
-      displayLarge: LastArcherStandingTextStyle.headline1.copyWith(
+      displayLarge: LastArcherStandingTextStyle.displayLarge.copyWith(
         fontSize: _textTheme.displayLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      displayMedium: LastArcherStandingTextStyle.headline2.copyWith(
+      displayMedium: LastArcherStandingTextStyle.displayMedium.copyWith(
         fontSize: _textTheme.displayMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      displaySmall: LastArcherStandingTextStyle.headline3.copyWith(
+      displaySmall: LastArcherStandingTextStyle.displaySmall.copyWith(
         fontSize: _textTheme.displaySmall!.fontSize! * _largeTextScaleFactor,
       ),
-      headlineMedium: LastArcherStandingTextStyle.headline4.copyWith(
+      headlineMedium: LastArcherStandingTextStyle.headlineMedium.copyWith(
         fontSize: _textTheme.headlineMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      headlineSmall: LastArcherStandingTextStyle.headline5.copyWith(
+      headlineSmall: LastArcherStandingTextStyle.headlineSmall.copyWith(
         fontSize: _textTheme.headlineSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      titleLarge: LastArcherStandingTextStyle.headline6.copyWith(
+      titleLarge: LastArcherStandingTextStyle.titleLarge.copyWith(
         fontSize: _textTheme.titleLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      titleMedium: LastArcherStandingTextStyle.subtitle1.copyWith(
+      titleMedium: LastArcherStandingTextStyle.titleMedium.copyWith(
         fontSize: _textTheme.titleMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      titleSmall: LastArcherStandingTextStyle.subtitle2.copyWith(
+      titleSmall: LastArcherStandingTextStyle.titleSmall.copyWith(
         fontSize: _textTheme.titleSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      bodyLarge: LastArcherStandingTextStyle.bodyText1.copyWith(
+      bodyLarge: LastArcherStandingTextStyle.bodyLarge.copyWith(
         fontSize: _textTheme.bodyLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      bodyMedium: LastArcherStandingTextStyle.bodyText2.copyWith(
+      bodyMedium: LastArcherStandingTextStyle.bodyMedium.copyWith(
         fontSize: _textTheme.bodyMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      bodySmall: LastArcherStandingTextStyle.caption.copyWith(
+      bodySmall: LastArcherStandingTextStyle.bodySmall.copyWith(
         fontSize: _textTheme.bodySmall!.fontSize! * _largeTextScaleFactor,
       ),
-      labelSmall: LastArcherStandingTextStyle.overline.copyWith(
+      labelSmall: LastArcherStandingTextStyle.labelSmall.copyWith(
         fontSize: _textTheme.labelSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      labelLarge: LastArcherStandingTextStyle.button.copyWith(
+      labelLarge: LastArcherStandingTextStyle.labelLarge.copyWith(
         fontSize: _textTheme.labelLarge!.fontSize! * _largeTextScaleFactor,
       ),
     );

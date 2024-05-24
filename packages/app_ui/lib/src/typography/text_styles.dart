@@ -6,13 +6,14 @@ import 'package:flutter/widgets.dart';
 class LastArcherStandingTextStyle {
   static const _baseTextStyle = TextStyle(
     package: 'app_ui',
-    fontFamily: 'OpenSans',
+    // fontFamily: 'Pixelify',
+    fontFamily: 'PublicPixel',
     color: LastArcherStandingColors.black,
     fontWeight: LastArcherStandingFontWeight.regular,
   );
 
   /// Headline 1 Text Style
-  static TextStyle get headline1 {
+  static TextStyle get displayLarge {
     return _baseTextStyle.copyWith(
       fontSize: 56,
       fontWeight: LastArcherStandingFontWeight.medium,
@@ -20,7 +21,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Headline 2 Text Style
-  static TextStyle get headline2 {
+  static TextStyle get displayMedium {
     return _baseTextStyle.copyWith(
       fontSize: 30,
       fontWeight: LastArcherStandingFontWeight.regular,
@@ -28,7 +29,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Headline 3 Text Style
-  static TextStyle get headline3 {
+  static TextStyle get displaySmall {
     return _baseTextStyle.copyWith(
       fontSize: 28,
       fontWeight: LastArcherStandingFontWeight.regular,
@@ -36,7 +37,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Headline 4 Text Style
-  static TextStyle get headline4 {
+  static TextStyle get headlineMedium {
     return _baseTextStyle.copyWith(
       fontSize: 22,
       fontWeight: LastArcherStandingFontWeight.bold,
@@ -44,7 +45,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Headline 5 Text Style
-  static TextStyle get headline5 {
+  static TextStyle get headlineSmall {
     return _baseTextStyle.copyWith(
       fontSize: 20,
       fontWeight: LastArcherStandingFontWeight.medium,
@@ -52,7 +53,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Headline 6 Text Style
-  static TextStyle get headline6 {
+  static TextStyle get titleLarge {
     return _baseTextStyle.copyWith(
       fontSize: 22,
       fontWeight: LastArcherStandingFontWeight.bold,
@@ -60,7 +61,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Subtitle 1 Text Style
-  static TextStyle get subtitle1 {
+  static TextStyle get titleMedium {
     return _baseTextStyle.copyWith(
       fontSize: 16,
       fontWeight: LastArcherStandingFontWeight.bold,
@@ -68,7 +69,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Subtitle 2 Text Style
-  static TextStyle get subtitle2 {
+  static TextStyle get titleSmall {
     return _baseTextStyle.copyWith(
       fontSize: 14,
       fontWeight: LastArcherStandingFontWeight.bold,
@@ -76,7 +77,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Body Text 1 Text Style
-  static TextStyle get bodyText1 {
+  static TextStyle get bodyLarge {
     return _baseTextStyle.copyWith(
       fontSize: 18,
       fontWeight: LastArcherStandingFontWeight.medium,
@@ -84,7 +85,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Body Text 2 Text Style (the default)
-  static TextStyle get bodyText2 {
+  static TextStyle get bodyMedium {
     return _baseTextStyle.copyWith(
       fontSize: 16,
       fontWeight: LastArcherStandingFontWeight.regular,
@@ -92,7 +93,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Caption Text Style
-  static TextStyle get caption {
+  static TextStyle get bodySmall {
     return _baseTextStyle.copyWith(
       fontSize: 14,
       fontWeight: LastArcherStandingFontWeight.regular,
@@ -100,7 +101,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Overline Text Style
-  static TextStyle get overline {
+  static TextStyle get labelSmall {
     return _baseTextStyle.copyWith(
       fontSize: 16,
       fontWeight: LastArcherStandingFontWeight.regular,
@@ -108,7 +109,7 @@ class LastArcherStandingTextStyle {
   }
 
   /// Button Text Style
-  static TextStyle get button {
+  static TextStyle get labelLarge {
     return _baseTextStyle.copyWith(
       fontSize: 18,
       fontWeight: LastArcherStandingFontWeight.medium,
