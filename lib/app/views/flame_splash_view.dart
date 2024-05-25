@@ -8,7 +8,7 @@ class FlameSplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FlameSplashScreen(
-        theme: FlameSplashTheme.white,
+        theme: FlameSplashTheme.dark,
         showBefore: (context) {
           return Text(
             'Get Gaming Under Development',

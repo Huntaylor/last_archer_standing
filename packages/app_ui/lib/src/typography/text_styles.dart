@@ -6,9 +6,8 @@ import 'package:flutter/widgets.dart';
 class LastArcherStandingTextStyle {
   static const _baseTextStyle = TextStyle(
     package: 'app_ui',
-    // fontFamily: 'Pixelify',
     fontFamily: 'PublicPixel',
-    color: LastArcherStandingColors.black,
+    color: LastArcherStandingColors.green,
     fontWeight: LastArcherStandingFontWeight.regular,
   );
 

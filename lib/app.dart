@@ -11,13 +11,13 @@ class App extends StatelessWidget {
     const theme = FlexScheme.greenM3;
     return MaterialApp.router(
       routerConfig: goRoutes,
-      theme: FlexThemeData.light(
+      theme: FlexThemeData.dark(
         scheme: theme,
         textTheme: LastArcherStandingTheme.standard.textTheme,
       ),
       darkTheme: FlexThemeData.dark(
         scheme: theme,
-        textTheme: LastArcherStandingTheme.standard.textTheme,
+        textTheme: LastArcherStandingTheme.large.textTheme,
       ),
     );
   }
