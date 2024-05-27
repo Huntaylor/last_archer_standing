@@ -16,8 +16,8 @@
             "scale": 0.6150260416666666,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 958.4959986450439,
-                "y": 635.7454376085025
+                "x": 1060.9306855231403,
+                "y": 1027.5987636024897
             }
         },
         "leveltileset.tsx": {
@@ -36,14 +36,13 @@
     "map.tileHeight": 64,
     "map.tileWidth": 64,
     "openFiles": [
-        "level_1.tmx",
-        "leveltileset.tsx"
+        "level_1.tmx"
     ],
     "project": "last_archer_tiled.tiled-project",
     "recentFiles": [
+        "level_1.tmx",
         "tiles/leveltileset.tsx",
         "leveltileset.tsx",
-        "level_1.tmx",
         "C:/Users/tiger/OneDrive/Documents/GitHub/last_archer_standing/assets/tiled/leveltileset.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",

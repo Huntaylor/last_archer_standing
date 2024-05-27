@@ -2,8 +2,10 @@ import 'dart:async';
 import 'dart:developer' as dev;
 
 // import 'package:flame/game.dart';
+import 'package:flame/game.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:logging/logging.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
@@ -25,11 +27,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  // if (kDebugMode) {
-  //   runApp(
-  //     GameWidget(game: ),
-  //   );
-  // } else {
-  runApp(await builder());
-  // }
+  if (kDebugMode) {
+    runApp(
+      GameWidget(game: LastArcherStandingGame()),
+    );
+  } else {
+    runApp(await builder());
+  }
 }
