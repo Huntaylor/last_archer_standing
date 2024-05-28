@@ -77,7 +77,6 @@ class BowStateBehavior extends Behavior<PlayerBow>
         armPng,
         armJson,
       ),
-      anchor: Anchor.topLeft,
     );
   }
 }

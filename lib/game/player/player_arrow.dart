@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flame/components.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 
@@ -11,9 +9,4 @@ class PlayerArrow extends SpriteComponent
     super.sprite,
     super.size,
   });
-
-  @override
-  FutureOr<void> onLoad() {
-    return super.onLoad();
-  }
 }

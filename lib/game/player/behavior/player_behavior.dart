@@ -80,7 +80,6 @@ class PlayerStateBehavior extends Behavior<Player>
         bodyPng,
         bodyJson,
       ),
-      anchor: Anchor.topLeft,
     );
   }
 }

@@ -17,7 +17,7 @@ class Player extends SpriteAnimationGroupComponent
     super.children,
   }) : super(
           size: Vector2(69, 117),
-          anchor: Anchor.topLeft,
+          anchor: const Anchor(0.35, 0.35),
         );
 
   late PlayerAnimationState playerState;
@@ -27,6 +27,8 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   FutureOr<void> onLoad() {
+    debugMode = true;
+
     playerState = PlayerAnimationState.idle;
 
     _log.info('Located at X: $x and Y: $y');
