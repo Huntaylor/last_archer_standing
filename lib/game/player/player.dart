@@ -1,9 +1,12 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/game/player/behavior/player_behavior.dart';
+import 'package:last_archer_standing/game/player/player_arrow.dart';
 import 'package:logging/logging.dart';
 
 class Player extends SpriteAnimationGroupComponent
@@ -22,6 +25,9 @@ class Player extends SpriteAnimationGroupComponent
 
   late PlayerAnimationState playerState;
 
+  late PlayerArrow arrow;
+  final _upVector = Vector2(0, -1);
+
   late final PlayerStateBehavior stateBehavior =
       findBehavior<PlayerStateBehavior>();
 
@@ -35,5 +41,12 @@ class Player extends SpriteAnimationGroupComponent
 
     addAll([PlayerStateBehavior()]);
     return super.onLoad();
+  }
+
+  @override
+  double _getAngle() {
+    // DevKage used this calculation in one of his games, how does it work?
+    final dir = game.mousePosition - position;
+    return (-dir.angleToSigned(_upVector)) * scale.x.sign - (pi * 0.5);
   }
 }

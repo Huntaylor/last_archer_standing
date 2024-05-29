@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:flame/camera.dart';
 import 'package:flame/components.dart';
-import 'package:flame/game.dart';
+import 'package:flame/events.dart';
 import 'package:flame/input.dart';
-import 'package:flame_behaviors/flame_behaviors.dart';
+import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:last_archer_standing/game/level.dart';
 import 'package:last_archer_standing/game/player/player.dart';
 import 'package:last_archer_standing/game/player/player_bow.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 
-class LastArcherStandingGame extends FlameGame
+class LastArcherStandingGame extends Forge2DGame
     with HasKeyboardHandlerComponents, MouseMovementDetector {
   LastArcherStandingGame();
 
@@ -41,10 +41,11 @@ class LastArcherStandingGame extends FlameGame
 
     final viewfinder = Viewfinder();
 
-    viewfinder
-      ..anchor = Anchor.topLeft
-      ..zoom = 3
-      ..position = Vector2(500, 800);
+    viewfinder.anchor = Anchor.topLeft;
+    // viewfinder
+    //   ..anchor = Anchor.topLeft
+    //   ..zoom = 3
+    //   ..position = Vector2(500, 800);
 
     camera = CameraComponent.withFixedResolution(
       viewfinder: viewfinder,

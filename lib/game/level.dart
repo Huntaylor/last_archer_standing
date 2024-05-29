@@ -1,16 +1,19 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/game/player/player.dart';
+import 'package:last_archer_standing/game/player/player_arrow.dart';
 import 'package:last_archer_standing/game/player/player_bow.dart';
 import 'package:last_archer_standing/resources/resources.dart';
 import 'package:last_archer_standing/utils/asset_parse.dart';
 import 'package:logging/logging.dart';
 
-class Level extends World with HasGameRef<LastArcherStandingGame>, AssetParse {
+class Level extends World
+    with HasGameRef<LastArcherStandingGame>, AssetParse, TapCallbacks {
   static final Logger _log = Logger('Level Data');
   Level({
     required this.player,
@@ -41,6 +44,20 @@ class Level extends World with HasGameRef<LastArcherStandingGame>, AssetParse {
     return super.onLoad();
   }
 
+  @override
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
+    print('tapped!');
+
+    add(
+      PlayerArrow(
+        event.localPosition,
+        linearVelocity: game.mousePosition,
+        // angle: _getAngle(),
+      ),
+    );
+  }
+
   Future<void> _spawningObjects(
     TiledComponent<FlameGame<World>> tiledLevel,
   ) async {
@@ -62,9 +79,13 @@ class Level extends World with HasGameRef<LastArcherStandingGame>, AssetParse {
               spawnPoint.x,
               spawnPoint.y,
             );
+
             player.priority = 3;
             bow.priority = player.priority + 1;
-            addAll([player, bow]);
+            addAll([
+              player,
+              bow,
+            ]);
           default:
         }
       }
