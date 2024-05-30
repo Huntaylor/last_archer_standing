@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
@@ -7,7 +5,8 @@ import 'package:last_archer_standing/resources/resources.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 import 'package:logging/logging.dart';
 
-class PlayerArrow extends BodyComponent with AssetParse {
+class PlayerArrow extends BodyComponent<LastArcherStandingGame>
+    with AssetParse {
   static final Logger _log = Logger('Arrow Data');
   PlayerArrow(
     this.initialPosition, {
@@ -34,7 +33,6 @@ class PlayerArrow extends BodyComponent with AssetParse {
     renderBody = false;
 
     // body.applyLinearImpulse(linearVelocity);
-    debugMode = true;
     add(
       SpriteComponent.fromImage(
         spriteImage,
@@ -46,6 +44,7 @@ class PlayerArrow extends BodyComponent with AssetParse {
 
   @override
   Body createBody() {
+    size.scale(0.3);
     final shape = PolygonShape();
 
     final vertices = [
@@ -68,8 +67,8 @@ class PlayerArrow extends BodyComponent with AssetParse {
     final bodyDef = BodyDef(
       bullet: true,
       angularVelocity: -0.5,
-      linearVelocity: Vector2(1, 1),
-      // linearVelocity: (game as LastArcherStandingGame).arrowVector,
+      // linearVelocity: Vector2(1, 1),
+      linearVelocity: game.arrowVector,
       position: initialPosition,
       angle: angle,
       // angle: (initialPosition.x + initialPosition.y) / 2 * pi,

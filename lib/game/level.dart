@@ -29,10 +29,12 @@ class Level extends World
   @override
   FutureOr<void> onLoad() async {
     _log.info('Loading Level');
+
     tiledLevel = await TiledComponent.load(
       tilesParse(TileMap.level1),
       Vector2.all(64),
-    );
+    )
+      ..scale = game.worldScale;
 
     _log.info(
       'tile size, Width: ${tiledLevel.width}, Height: ${tiledLevel.height}',
@@ -65,19 +67,26 @@ class Level extends World
 
     if (spawnPointLayer != null) {
       for (final spawnPoint in spawnPointLayer.objects) {
+        final positionPlayer = Vector2(175, 225);
         switch (spawnPoint.class_) {
           case 'Player_Spawn':
             _log.info(
               'Spawning Player at ${spawnPoint.x} - X and ${spawnPoint.y} - Y',
             );
-            bow.position = Vector2(
+            bow
+              ..position = positionPlayer
+              ..scale = game
+                  .worldScale; /* Vector2(
               spawnPoint.x,
               spawnPoint.y,
-            );
-            player.position = Vector2(
+            ); */
+            player
+              ..position = positionPlayer
+              ..scale = game
+                  .worldScale; /* Vector2(
               spawnPoint.x,
               spawnPoint.y,
-            );
+            ); */
 
             player.priority = 3;
             bow.priority = player.priority + 1;
