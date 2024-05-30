@@ -47,13 +47,12 @@ class Level extends World
   @override
   void onTapDown(TapDownEvent event) {
     super.onTapDown(event);
-    print('tapped!');
 
     add(
       PlayerArrow(
-        event.localPosition,
+        player.position,
         linearVelocity: game.mousePosition,
-        // angle: _getAngle(),
+        angle: bow.angle,
       ),
     );
   }

@@ -20,10 +20,12 @@ class LastArcherStandingGame extends Forge2DGame
   late Level level;
 
   final Vector2 mousePosition = Vector2.zero();
+  final arrowVector = Vector2.zero();
 
   @override
   void onMouseMove(PointerHoverInfo info) {
     mousePosition.setFrom(camera.globalToLocal(info.eventPosition.global));
+    arrowVector.setFrom(info.eventPosition.global);
     super.onMouseMove(info);
   }
 
@@ -41,18 +43,23 @@ class LastArcherStandingGame extends Forge2DGame
 
     final viewfinder = Viewfinder();
 
-    viewfinder.anchor = Anchor.topLeft;
+    viewfinder
+      ..anchor = Anchor.topLeft
+      ..zoom = 1.2
+      ..position = Vector2(250, 600);
     // viewfinder
     //   ..anchor = Anchor.topLeft
     //   ..zoom = 3
     //   ..position = Vector2(500, 800);
 
-    camera = CameraComponent.withFixedResolution(
-      viewfinder: viewfinder,
-      width: 1920,
-      height: 1280,
-      world: level,
-    );
+    // camera = CameraComponent.withFixedResolution(
+    //   viewfinder: viewfinder,
+    //   width: 1920,
+    //   height: 1280,
+    //   world: level,
+    // );
+
+    camera = CameraComponent(world: level, viewfinder: viewfinder);
 
     addAll(
       [

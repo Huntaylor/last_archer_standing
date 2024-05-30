@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/resources/resources.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 import 'package:logging/logging.dart';
@@ -10,15 +11,15 @@ class PlayerArrow extends BodyComponent with AssetParse {
   static final Logger _log = Logger('Arrow Data');
   PlayerArrow(
     this.initialPosition, {
+    required this.angle,
     required this.linearVelocity,
-    // required this.angle,
     Vector2? size,
     super.bodyDef,
     super.priority,
   }) : size = size ?? Vector2(44, 6);
 
-  // @override
-  // final double angle;
+  @override
+  late double angle;
 
   final Vector2 linearVelocity;
   final Vector2 initialPosition;
@@ -32,6 +33,8 @@ class PlayerArrow extends BodyComponent with AssetParse {
 
     renderBody = false;
 
+    // body.applyLinearImpulse(linearVelocity);
+    debugMode = true;
     add(
       SpriteComponent.fromImage(
         spriteImage,
@@ -65,10 +68,12 @@ class PlayerArrow extends BodyComponent with AssetParse {
     final bodyDef = BodyDef(
       bullet: true,
       angularVelocity: -0.5,
-      linearVelocity: linearVelocity,
+      linearVelocity: Vector2(1, 1),
+      // linearVelocity: (game as LastArcherStandingGame).arrowVector,
       position: initialPosition,
-      // angle: angle,
-      angle: (initialPosition.x + initialPosition.y) / 2 * pi,
+      angle: angle,
+      // angle: (initialPosition.x + initialPosition.y) / 2 * pi,
+
       type: BodyType.dynamic,
     );
     return world.createBody(bodyDef)..createFixture(fixtureDef);
