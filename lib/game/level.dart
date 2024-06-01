@@ -53,7 +53,6 @@ class Level extends World
     add(
       PlayerArrow(
         player.position,
-        linearVelocity: game.mousePosition,
         angle: bow.angle,
       ),
     );

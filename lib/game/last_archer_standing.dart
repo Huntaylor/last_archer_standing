@@ -5,6 +5,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flutter/widgets.dart';
 import 'package:last_archer_standing/game/level.dart';
 import 'package:last_archer_standing/game/player/player.dart';
 import 'package:last_archer_standing/game/player/player_bow.dart';
@@ -19,7 +20,7 @@ class LastArcherStandingGame extends Forge2DGame
 
   late Level level;
 
-  final Vector2 worldScale = Vector2.all(0.2);
+  final Vector2 worldScale = Vector2.all(0.3);
 
   final Vector2 mousePosition = Vector2.zero();
   final arrowVector = Vector2.zero();
@@ -27,7 +28,6 @@ class LastArcherStandingGame extends Forge2DGame
   @override
   void onMouseMove(PointerHoverInfo info) {
     mousePosition.setFrom(camera.globalToLocal(info.eventPosition.global));
-    print(mousePosition);
     arrowVector.setFrom(info.eventPosition.global);
     super.onMouseMove(info);
   }
@@ -48,7 +48,7 @@ class LastArcherStandingGame extends Forge2DGame
 
     viewfinder
       ..anchor = Anchor.topLeft
-      ..zoom = 2.8;
+      ..zoom = 2.9;
     // viewfinder
     //   ..anchor = Anchor.topLeft
     //   ..zoom = 3
@@ -61,7 +61,10 @@ class LastArcherStandingGame extends Forge2DGame
     //   world: level,
     // );
 
-    camera = CameraComponent(world: level, viewfinder: viewfinder);
+    camera = CameraComponent(
+      world: level,
+      viewfinder: viewfinder,
+    );
 
     addAll(
       [
