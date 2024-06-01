@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
-import 'package:last_archer_standing/game/player/player.dart';
+import 'package:last_archer_standing/game/entities/player/player.dart';
 import 'package:last_archer_standing/resources/resources.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 import 'package:logging/logging.dart';

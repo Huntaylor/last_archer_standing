@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
-import 'package:last_archer_standing/game/player/behavior/bow_behavior.dart';
+import 'package:last_archer_standing/game/entities/player/behavior/bow_behavior.dart';
 import 'package:logging/logging.dart';
 
 class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>

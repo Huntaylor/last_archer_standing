@@ -33,7 +33,6 @@ class PlayerArrow extends BodyComponent<LastArcherStandingGame>
     renderBody = false;
     debugMode = true;
 
-    // body.applyLinearImpulse(linearVelocity);
     add(
       SpriteComponent.fromImage(
         spriteImage,
@@ -47,8 +46,6 @@ class PlayerArrow extends BodyComponent<LastArcherStandingGame>
   void update(double dt) {
     super.update(dt);
     const dragConstant = 0.1;
-    //  const double speed = 10.0;
-    // final velocity = Vector2(cos(angle), sin(angle)) * speed;
 
     final flightDirection = body.linearVelocity;
     final flightSpeed = flightDirection.length;
@@ -74,14 +71,10 @@ class PlayerArrow extends BodyComponent<LastArcherStandingGame>
     final shape = PolygonShape();
 
     final vertices = [
-      Vector2(-1.4, 0),
-      Vector2(0, -0.1),
-      Vector2(0.6, 0),
-      Vector2(0, 0.1),
-      // Vector2(-size.x / 2, size.y / 2),
-      // Vector2(size.x / 2, size.y / 2),
-      // Vector2(size.x / 2, -size.y / 2),
-      // Vector2(-size.x / 2, -size.y / 2),
+      Vector2(-5.4, 0),
+      Vector2(0, -1.1),
+      Vector2(5.6, 0),
+      Vector2(0, 1.1),
     ];
 
     _log.info('Arrow Vertices: $vertices, Length: ${vertices.length}');

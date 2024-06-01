@@ -7,8 +7,8 @@ import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/widgets.dart';
 import 'package:last_archer_standing/game/level.dart';
-import 'package:last_archer_standing/game/player/player.dart';
-import 'package:last_archer_standing/game/player/player_bow.dart';
+import 'package:last_archer_standing/game/entities/player/player.dart';
+import 'package:last_archer_standing/game/entities/player/player_bow.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 
 class LastArcherStandingGame extends Forge2DGame
@@ -48,7 +48,8 @@ class LastArcherStandingGame extends Forge2DGame
 
     viewfinder
       ..anchor = Anchor.topLeft
-      ..zoom = 2.9;
+      ..zoom = 3
+      ..position = Vector2(0, 100);
     // viewfinder
     //   ..anchor = Anchor.topLeft
     //   ..zoom = 3
