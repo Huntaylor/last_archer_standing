@@ -1,0 +1,91 @@
+{ "frames": {
+   "bow_drawback 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 100
+   },
+   "bow_drawback 1.aseprite": {
+    "frame": { "x": 69, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 2.aseprite": {
+    "frame": { "x": 138, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 3.aseprite": {
+    "frame": { "x": 207, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 4.aseprite": {
+    "frame": { "x": 276, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 5.aseprite": {
+    "frame": { "x": 345, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 6.aseprite": {
+    "frame": { "x": 414, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 7.aseprite": {
+    "frame": { "x": 483, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   },
+   "bow_drawback 8.aseprite": {
+    "frame": { "x": 552, "y": 0, "w": 69, "h": 60 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 69, "h": 60 },
+    "sourceSize": { "w": 69, "h": 60 },
+    "duration": 40
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.7-x64",
+  "image": "arrow_drawback.png",
+  "format": "RGBA8888",
+  "size": { "w": 621, "h": 60 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Bow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

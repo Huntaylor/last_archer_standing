@@ -4,21 +4,28 @@ import 'package:flame/camera.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/input.dart';
+import 'package:flame_bloc/flame_bloc.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/widgets.dart';
-import 'package:last_archer_standing/game/level.dart';
+import 'package:last_archer_standing/game/components/bow_loading_manager.dart';
+import 'package:last_archer_standing/game/components/bow_timer_bar_component.dart';
+import 'package:last_archer_standing/game/cubit/bow_cubit.dart';
 import 'package:last_archer_standing/game/entities/player/player.dart';
 import 'package:last_archer_standing/game/entities/player/player_bow.dart';
+import 'package:last_archer_standing/game/level.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 
 class LastArcherStandingGame extends Forge2DGame
     with HasKeyboardHandlerComponents, MouseMovementDetector {
-  LastArcherStandingGame();
+  LastArcherStandingGame({required this.bowCubit});
+
+  final BowCubit bowCubit;
 
   PlayerBow bow = PlayerBow();
   Player player = Player();
 
   late Level level;
+  late BowLoadingManager loadingManager;
 
   final Vector2 worldScale = Vector2.all(0.3);
 
@@ -33,46 +40,62 @@ class LastArcherStandingGame extends Forge2DGame
   }
 
   @override
-  Color backgroundColor() => const Color.fromARGB(255, 180, 180, 180);
+  Color backgroundColor() => const Color.fromARGB(
+        255,
+        180,
+        180,
+        180,
+      );
 
   @override
   FutureOr<void> onLoad() async {
     await images.loadAllImages();
 
+    await _loadHud();
+    await _loadLevel();
+
+    return super.onLoad();
+  }
+
+  Future<void> _loadHud() async {
+    loadingManager = BowLoadingManager(
+      timerBar: InteractionTimerBar(),
+      position: (player.position..y = player.position.y - 50),
+    );
+  }
+
+  Future<void> _loadLevel() async {
     level = Level(
       player: player,
       bow: bow,
     );
-
     final viewfinder = Viewfinder();
 
     viewfinder
       ..anchor = Anchor.topLeft
-      ..zoom = 3
+      ..zoom = 3.5
       ..position = Vector2(0, 100);
-    // viewfinder
-    //   ..anchor = Anchor.topLeft
-    //   ..zoom = 3
-    //   ..position = Vector2(500, 800);
-
-    // camera = CameraComponent.withFixedResolution(
-    //   viewfinder: viewfinder,
-    //   width: 1920,
-    //   height: 1280,
-    //   world: level,
-    // );
 
     camera = CameraComponent(
       world: level,
       viewfinder: viewfinder,
-    );
-
-    addAll(
-      [
-        camera,
-        level,
+      hudComponents: [
+        loadingManager,
       ],
     );
-    return super.onLoad();
+
+    await add(
+      FlameMultiBlocProvider(
+        providers: [
+          FlameBlocProvider<BowCubit, BowState>.value(
+            value: bowCubit,
+            children: [
+              level,
+              camera,
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }

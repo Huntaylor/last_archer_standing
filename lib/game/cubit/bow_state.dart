@@ -8,7 +8,7 @@ sealed class BowState extends Equatable {
   BowInitialState get asInitial => this as BowInitialState;
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 @autoequal
@@ -16,9 +16,16 @@ sealed class BowState extends Equatable {
 final class BowInitialState extends BowState {
   const BowInitialState({
     required this.timerState,
+    required this.hasFired,
   });
 
-  const BowInitialState.initial() : timerState = TimerState.initial;
+  const BowInitialState.initial()
+      : timerState = TimerState.initial,
+        hasFired = false;
 
   final TimerState timerState;
+  final bool hasFired;
+
+  @override
+  List<Object?> get props => _$props;
 }

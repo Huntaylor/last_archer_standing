@@ -3,8 +3,9 @@ import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
-import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/game/entities/player/behavior/bow_behavior.dart';
+import 'package:last_archer_standing/game/entities/player/behavior/bow_firing_behavior.dart';
+import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:logging/logging.dart';
 
 class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>
@@ -21,17 +22,23 @@ class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>
           anchor: const Anchor(0.3, 0.5),
         );
 
-  late BowAnimationState bowState;
   final _upVector = Vector2(0, -1);
 
   late final BowStateBehavior stateBehavior = findBehavior<BowStateBehavior>();
+
+  late final BowFiringBehavior firingBehavior =
+      findBehavior<BowFiringBehavior>();
 
   @override
   FutureOr<void> onLoad() async {
     _log.info('Anchor Values: ${anchor.toVector2()}');
     _log.info('Located at X: $x and Y: $y');
-    bowState = BowAnimationState.idle;
-    add(BowStateBehavior());
+    addAll(
+      [
+        BowStateBehavior(),
+        BowFiringBehavior(),
+      ],
+    );
     return super.onLoad();
   }
 

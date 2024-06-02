@@ -10,7 +10,6 @@ enum TimerState {
   initial,
   inProgress,
   complete,
-  cancelled,
 }
 
 class InteractionTimerBar extends PositionComponent
@@ -90,6 +89,5 @@ class InteractionTimerBar extends PositionComponent
   void cancelTimer() {
     elapsedTime = 0;
     _progress = 0;
-    timerState = TimerState.cancelled;
   }
 }

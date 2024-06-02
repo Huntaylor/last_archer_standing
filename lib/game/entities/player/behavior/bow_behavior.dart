@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
-import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/game/entities/player/player_bow.dart';
+import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/resources/resources.dart';
 import 'package:last_archer_standing/utils/app_library.dart';
 
@@ -60,23 +60,32 @@ class BowStateBehavior extends Behavior<PlayerBow>
   }
 
   Future<void> _loadAllAnimations() async {
-    firingAnimation = await _spriteAnimation();
-    idleAnimation = await _spriteAnimation();
+    firingAnimation = await _spriteAnimation(
+      png: SpritePng.bowRelease,
+      json: SpriteJson.bowRelease,
+    );
+    idleAnimation = await _spriteAnimation(
+      png: SpritePng.bowDrawback,
+      json: SpriteJson.bowDrawback,
+    );
   }
 
-  Future<SpriteAnimationComponent> _spriteAnimation() async {
+  Future<SpriteAnimationComponent> _spriteAnimation({
+    required String png,
+    required String json,
+  }) async {
     final armPng = await game.images.load(
-      imageParse(SpritePng.playerArms),
+      imageParse(png),
     );
     final armJson = await gameRef.assets.readJson(
-      jsonPathParse(SpriteJson.playerArms),
+      jsonPathParse(json),
     );
 
     return SpriteAnimationComponent(
       animation: SpriteAnimation.fromAsepriteData(
         armPng,
         armJson,
-      ),
+      )..loop = false,
     );
   }
 }

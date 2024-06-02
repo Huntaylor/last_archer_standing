@@ -3,11 +3,24 @@
 part of 'bow_cubit.dart';
 
 // **************************************************************************
+// AutoequalGenerator
+// **************************************************************************
+
+extension _$BowInitialStateAutoequal on BowInitialState {
+  List<Object?> get _$props => [
+        timerState,
+        hasFired,
+      ];
+}
+
+// **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
 abstract class _$BowInitialStateCWProxy {
   BowInitialState timerState(TimerState timerState);
+
+  BowInitialState hasFired(bool hasFired);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BowInitialState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -17,6 +30,7 @@ abstract class _$BowInitialStateCWProxy {
   /// ````
   BowInitialState call({
     TimerState? timerState,
+    bool? hasFired,
   });
 }
 
@@ -31,6 +45,9 @@ class _$BowInitialStateCWProxyImpl implements _$BowInitialStateCWProxy {
       this(timerState: timerState);
 
   @override
+  BowInitialState hasFired(bool hasFired) => this(hasFired: hasFired);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BowInitialState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -40,6 +57,7 @@ class _$BowInitialStateCWProxyImpl implements _$BowInitialStateCWProxy {
   /// ````
   BowInitialState call({
     Object? timerState = const $CopyWithPlaceholder(),
+    Object? hasFired = const $CopyWithPlaceholder(),
   }) {
     return BowInitialState(
       timerState:
@@ -47,6 +65,10 @@ class _$BowInitialStateCWProxyImpl implements _$BowInitialStateCWProxy {
               ? _value.timerState
               // ignore: cast_nullable_to_non_nullable
               : timerState as TimerState,
+      hasFired: hasFired == const $CopyWithPlaceholder() || hasFired == null
+          ? _value.hasFired
+          // ignore: cast_nullable_to_non_nullable
+          : hasFired as bool,
     );
   }
 }
