@@ -31,7 +31,6 @@ class PlayerArrow extends BodyComponent<LastArcherStandingGame>
     final spriteImage = await game.images.load(imageParse(SpritePng.arrow));
 
     renderBody = false;
-    debugMode = true;
 
     add(
       SpriteComponent.fromImage(
@@ -86,7 +85,7 @@ class PlayerArrow extends BodyComponent<LastArcherStandingGame>
       userData: this, // To be able to determine object in collision
       restitution: 0.4,
     );
-    const double speed = 10.0;
+    const speed = 50.0;
     final velocity = Vector2(cos(angle), sin(angle)) * speed;
 
     final bodyDef = BodyDef(

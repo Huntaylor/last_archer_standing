@@ -5,6 +5,7 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:last_archer_standing/game/entities/player/behavior/player_controller_behavior.dart';
 import 'package:last_archer_standing/game/entities/player/behavior/player_state_behavior.dart';
 import 'package:last_archer_standing/game/entities/player/player_arrow.dart';
+import 'package:last_archer_standing/game/entities/player/player_bow.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:logging/logging.dart';
 
@@ -29,12 +30,13 @@ class Player extends SpriteAnimationGroupComponent
   double fixedDeltaTime = 1 / 60;
   double accumulatedTime = 0;
   double moveSpeed = 200;
+  Vector2 velocity = Vector2.zero();
   double horizontalMovement = 0;
   double verticalMovement = 0;
   late PlayerAnimationState playerState;
 
   late PlayerArrow arrow;
-  // final _upVector = Vector2(0, -1);
+  // late PlayerBow bow;
 
   late final PlayerStateBehavior stateBehavior =
       findBehavior<PlayerStateBehavior>();
@@ -49,20 +51,34 @@ class Player extends SpriteAnimationGroupComponent
 
     _log.info('Located at X: $x and Y: $y');
 
+    // bow = PlayerBow(position: position)..anchor = anchor;
+
+    // bow.scale = game.worldScale;
+
     addAll(
       [
         PlayerStateBehavior(),
         PlayerControllerBehavior(),
+        // bow,
       ],
     );
     return super.onLoad();
   }
 
-  @override
-  void update(double dt) {
-    final displacement = direction.normalized() * moveSpeed * dt;
+//   @override
+//   void update(double dt) {
+//     accumulatedTime += dt;
 
-    position.add(displacement);
-    super.update(dt);
-  }
+//     while (accumulatedTime >= fixedDeltaTime) {
+//       velocity.x = horizontalMovement * moveSpeed;
+//       velocity.y = verticalMovement * moveSpeed;
+
+//       position.y += velocity.y * dt;
+
+//       position.x += velocity.x * dt;
+
+//       accumulatedTime -= fixedDeltaTime;
+//     }
+//     super.update(dt);
+//   }
 }

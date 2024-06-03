@@ -3,19 +3,17 @@
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/services.dart';
-import 'package:last_archer_standing/game/entities/player/behavior/player_state_behavior.dart';
-import 'package:last_archer_standing/game/entities/player/player.dart';
+import 'package:last_archer_standing/game/entities/player/player_bow.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 
-class PlayerControllerBehavior extends Behavior<Player>
+class BowControllerBehavior extends Behavior<PlayerBow>
     with KeyboardHandler, HasGameRef<LastArcherStandingGame> {
-  PlayerControllerBehavior();
+  BowControllerBehavior();
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     parent.horizontalMovement = 0;
     parent.verticalMovement = 0;
-    late PlayerAnimationState playerState;
     final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyA) ||
         keysPressed.contains(LogicalKeyboardKey.arrowLeft);
     final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
@@ -29,16 +27,7 @@ class PlayerControllerBehavior extends Behavior<Player>
     parent.horizontalMovement += isRightKeyPressed ? 1 : 0;
     parent.verticalMovement += isUpKeyPressed ? -1 : 0;
     parent.verticalMovement += isDownKeyPressed ? 1 : 0;
-    if (isLeftKeyPressed ||
-        isRightKeyPressed ||
-        isUpKeyPressed ||
-        isDownKeyPressed) {
-      playerState = PlayerAnimationState.walking;
-    } else {
-      playerState = PlayerAnimationState.idle;
-    }
 
-    parent.stateBehavior.state = playerState;
     return super.onKeyEvent(event, keysPressed);
   }
 
