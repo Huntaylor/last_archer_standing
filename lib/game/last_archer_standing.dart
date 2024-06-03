@@ -23,6 +23,7 @@ class LastArcherStandingGame extends Forge2DGame
 
   PlayerBow bow = PlayerBow();
   Player player = Player();
+  // TargetComponent target = TargetComponent();
 
   late Level level;
   late BowLoadingManager loadingManager;
@@ -66,6 +67,7 @@ class LastArcherStandingGame extends Forge2DGame
 
   Future<void> _loadLevel() async {
     level = Level(
+      // target: target,
       player: player,
       bow: bow,
     );

@@ -9,4 +9,5 @@ class SpritePng {
   static const String playerArms = 'assets/images/sprites/player_arms.png';
   static const String playerBody = 'assets/images/sprites/player_body.png';
   static const String playerIdle = 'assets/images/sprites/player_idle.png';
+  static const String target = 'assets/images/sprites/target.png';
 }

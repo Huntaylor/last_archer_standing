@@ -21,15 +21,6 @@ class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>
           size: Vector2(69, 60),
           anchor: const Anchor(0.3, 0.5),
         );
-  final Vector2 direction = Vector2.zero();
-  double stepTime = 0.5;
-  double walkingStepTime = 0.15;
-  double fixedDeltaTime = 1 / 60;
-  double accumulatedTime = 0;
-  double moveSpeed = 200;
-  Vector2 velocity = Vector2.zero();
-  double horizontalMovement = 0;
-  double verticalMovement = 0;
 
   final _upVector = Vector2(0, -1);
 
@@ -53,12 +44,8 @@ class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>
 
   @override
   void update(double dt) {
-    accumulatedTime += dt;
-
-    while (accumulatedTime >= fixedDeltaTime) {
-      _getAngle();
-      // _getMovement(fixedDeltaTime);
-    }
+    _getAngle();
+    // _getMovement(fixedDeltaTime);
     super.update(dt);
   }
 
@@ -66,16 +53,5 @@ class PlayerBow extends SpriteAnimationGroupComponent<BowAnimationState>
     // DevKage used this calculation in one of his games, how does it work?
     final dir = game.mousePosition - position;
     angle = (-dir.angleToSigned(_upVector)) * scale.x.sign - (pi * 0.5);
-  }
-
-  void _getMovement(double dt) {
-    velocity.x = horizontalMovement * moveSpeed;
-    velocity.y = verticalMovement * moveSpeed;
-
-    position.y += velocity.y * dt;
-
-    position.x += velocity.x * dt;
-
-    accumulatedTime -= fixedDeltaTime;
   }
 }

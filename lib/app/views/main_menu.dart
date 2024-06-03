@@ -19,27 +19,27 @@ class MainMenu extends StatelessWidget {
                   style: context.textTheme.displayMedium,
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 ElevatedButton.icon(
                   iconAlignment: IconAlignment.end,
                   onPressed: () {
                     context.push(Paths.mainMenu.gameView.path);
                   },
-                  label: const Text('Play'),
+                  label: const Text('Tutorial'),
                   icon: const Icon(Icons.play_arrow),
                 ),
                 const SizedBox(
                   height: 8,
                 ),
-                ElevatedButton.icon(
-                  iconAlignment: IconAlignment.end,
-                  onPressed: () {
-                    context.push(Paths.mainMenu.settings.path);
-                  },
-                  label: const Text('Settings'),
-                  icon: const Icon(Icons.settings),
-                ),
+                // ElevatedButton.icon(
+                //   iconAlignment: IconAlignment.end,
+                //   onPressed: () {
+                //     context.push(Paths.mainMenu.settings.path);
+                //   },
+                //   label: const Text('Settings'),
+                //   icon: const Icon(Icons.settings),
+                // ),
               ],
             ),
           ),

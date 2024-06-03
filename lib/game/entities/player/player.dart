@@ -5,7 +5,6 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:last_archer_standing/game/entities/player/behavior/player_controller_behavior.dart';
 import 'package:last_archer_standing/game/entities/player/behavior/player_state_behavior.dart';
 import 'package:last_archer_standing/game/entities/player/player_arrow.dart';
-import 'package:last_archer_standing/game/entities/player/player_bow.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:logging/logging.dart';
 
@@ -65,20 +64,20 @@ class Player extends SpriteAnimationGroupComponent
     return super.onLoad();
   }
 
-//   @override
-//   void update(double dt) {
-//     accumulatedTime += dt;
+  // @override
+  // void update(double dt) {
+  //   accumulatedTime += dt;
 
-//     while (accumulatedTime >= fixedDeltaTime) {
-//       velocity.x = horizontalMovement * moveSpeed;
-//       velocity.y = verticalMovement * moveSpeed;
+  //   while (accumulatedTime >= fixedDeltaTime) {
+  //     velocity.x = horizontalMovement * moveSpeed;
+  //     velocity.y = verticalMovement * moveSpeed;
 
-//       position.y += velocity.y * dt;
+  //     position.y += velocity.y * dt;
 
-//       position.x += velocity.x * dt;
+  //     position.x += velocity.x * dt;
 
-//       accumulatedTime -= fixedDeltaTime;
-//     }
-//     super.update(dt);
-//   }
+  //     accumulatedTime -= fixedDeltaTime;
+  //   }
+  //   super.update(dt);
+  // }
 }

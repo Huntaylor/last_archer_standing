@@ -6,6 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame_bloc/flame_bloc.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:last_archer_standing/game/components/bow_timer_bar_component.dart';
+import 'package:last_archer_standing/game/components/target_component.dart';
 import 'package:last_archer_standing/game/cubit/bow_cubit.dart';
 import 'package:last_archer_standing/game/entities/player/player.dart';
 import 'package:last_archer_standing/game/entities/player/player_arrow.dart';
@@ -25,11 +26,13 @@ class Level extends World
   Level({
     required this.player,
     required this.bow,
+    // required this.target,
     super.children,
     super.priority,
   });
   final Player player;
   final PlayerBow bow;
+  // final TargetComponent target;
 
   late TiledComponent tiledLevel;
   late PlayerArrow playerArrow;
@@ -135,16 +138,23 @@ class Level extends World
               spawnPoint.x,
               spawnPoint.y,
             ); */
-
+            // target.position = Vector2(250, 225);
             player.priority = 3;
             bow.priority = player.priority + 1;
             addAll([
               player,
               bow,
+              // target,
             ]);
           default:
         }
       }
+      final target = TargetComponent(
+        scale: game.worldScale,
+        position: Vector2(250, 225),
+      );
+
+      add(target);
     }
   }
 }

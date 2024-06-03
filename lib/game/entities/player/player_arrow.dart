@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
+import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:last_archer_standing/game/last_archer_standing.dart';
 import 'package:last_archer_standing/resources/resources.dart';
@@ -8,7 +9,7 @@ import 'package:last_archer_standing/utils/app_library.dart';
 import 'package:logging/logging.dart';
 
 class PlayerArrow extends BodyComponent<LastArcherStandingGame>
-    with AssetParse {
+    with AssetParse, EntityMixin {
   static final Logger _log = Logger('Arrow Data');
   PlayerArrow(
     this.initialPosition, {

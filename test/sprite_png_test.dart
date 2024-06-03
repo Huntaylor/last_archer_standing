@@ -11,5 +11,6 @@ void main() {
     expect(File(SpritePng.playerArms).existsSync(), isTrue);
     expect(File(SpritePng.playerBody).existsSync(), isTrue);
     expect(File(SpritePng.playerIdle).existsSync(), isTrue);
+    expect(File(SpritePng.target).existsSync(), isTrue);
   });
 }
